@@ -1,0 +1,116 @@
+﻿@model IEnumerable<CTSPDF.Models.cse_summary_sixmonths>
+
+@{
+    ViewBag.Title = "createPDF";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>createPDF</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                id
+            </th>
+
+
+        </tr>
+
+        @foreach (var item in ViewBag.ctslist)
+        {
+            <tr>
+                <td>
+                    <a style="cursor:pointer" href="/Home/GetData?responseId=@item.response_id">@item.response_id </a>  @*(click on link and it will create a pdf from the table cse_summary_sixmonths)*@
+                    @*onclick="ExportData('@item.response_id')"*@
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+
+@*@using (Html.BeginForm("Export", "Home", FormMethod.Post))
+{
+    <input type="hidden" name="GridHtml" />
+        <input type="submit" id="btnSubmit" value="Export" />
+}*@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    //$(function () {
+    //    $("#btnSubmit").click(function () {
+    //        $("input[name='GridHtml']").val($("#Grid").html());
+    //    });
+    //});
+
+    function ExportData(responseId) {
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("GetData","Home")',
+            data: { 'responseId': responseId },
+            success: function (result) {
+                if (result.data) {
+                    console.log(result.data);
+                }
+                else {
+                    alert('Error, please try again');
+                }
+            },
+            error: function () {
+                alert('Error, please try again');
+            }
+        });
+    }
+</script>
+<style type="text/css">
+
+      html {-webkit-font-smoothing: antialiased !important; direction:ltr;}
+      body {background: #FFF; font-family:Verdana, Geneva, sans-serif; direction:ltr; margin:10px;}
+      page {background: white;display: block;margin: 0 auto;margin-bottom:0cm; box-shadow:none;}
+
+      .main-page { border:0px solid #000; padding:10px; font-size:14px; color:#000; font-family:Verdana, Geneva, sans-serif; line-height:18px;  position:relative; height:100%; }
+      .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+      }
+      * {  -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;}
+      p{line-height: 20px; padding: 0px; margin: 5px 0 5px 0;   }
+      .pagebase { margin:0px 0px; border:0px solid #000; padding:0px;}
+      .clear { clear:both;}
+      .right { float:right;}
+      .left { float:left;}
+      .arabic { direction:rtl;}
+      .text-right { text-align:right;}
+      .text-left { text-align:left;}
+      .text-center { text-align:center;}
+
+      @@media print {
+      body, page {
+      margin: 0;
+      box-shadow: 0;
+      }
+      @@page {
+      margin:0cm;
+      }
+      .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+
+      .pagebase {}
+      page[size="A4"]  { padding:0mm;}
+      .green{ background-color: #004752 !important; -webkit-print-color-adjust: exact;  }
+      .grey{ background-color: #666 !important; -webkit-print-color-adjust: exact;  }
+      .bluebg { background-color:#c9defd !important; -webkit-print-color-adjust: exact; }
+      .greenbg { background-color:#b5e8ba !important; -webkit-print-color-adjust: exact; }
+
+ 	.green-bg{background:#c4d79b !important; -webkit-print-color-adjust: exact; }
+	  .blue-bg{background:#95b3d7 !important; -webkit-print-color-adjust: exact; }
+	  .light-green-bg{background:#ebf1de !important; -webkit-print-color-adjust: exact; }
+	  .light-green-bg2{background:#c6e0b4 !important; -webkit-print-color-adjust: exact; }
+      }
+</style>

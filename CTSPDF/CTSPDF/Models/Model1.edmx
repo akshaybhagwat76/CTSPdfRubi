@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="new_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="cse_summary_sixmonths_test">
+          <Key>
+            <PropertyRef Name="response_id" />
+          </Key>
+          <Property Name="response_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date_first" Type="datetime" />
+          <Property Name="date_last" Type="datetime" />
+          <Property Name="show_date" Type="datetime" />
+          <Property Name="rock_star_winners" Type="varchar(max)" />
+          <Property Name="super_stars_winner" Type="varchar" MaxLength="150" />
+          <Property Name="super_stars_winner_ave" Type="float" />
+          <Property Name="super_stars_runnerup" Type="varchar" MaxLength="150" />
+          <Property Name="super_stars_runnerup_ave" Type="float" />
+          <Property Name="blazing_stars_winner" Type="varchar" MaxLength="150" />
+          <Property Name="blazing_stars_winner_ave" Type="float" />
+          <Property Name="blazing_stars_runnerup" Type="varchar" MaxLength="150" />
+          <Property Name="blazing_stars_runnerup_ave" Type="float" />
+          <Property Name="supporting_stars_winner" Type="varchar" MaxLength="150" />
+          <Property Name="supporting_stars_winner_stars" Type="float" />
+          <Property Name="supporting_stars_runnerup" Type="varchar" MaxLength="150" />
+          <Property Name="supporting_stars_runnerup_stars" Type="float" />
+          <Property Name="leading_stars_winners" Type="varchar" MaxLength="150" />
+          <Property Name="leading_stars_winners_stars" Type="float" />
+          <Property Name="leading_stars_runnerup" Type="varchar" MaxLength="150" />
+          <Property Name="leading_stars_runnerup_stars" Type="float" />
+          <Property Name="supporting_cast_winner" Type="varchar" MaxLength="150" />
+          <Property Name="supporting_cast_winner_stars" Type="float" />
+          <Property Name="supporting_cast_runnerup" Type="varchar" MaxLength="150" />
+          <Property Name="supporting_cast_runnerup_stars" Type="float" />
+        </EntityType>
+        <EntityContainer Name="new_DbModelStoreContainer">
+          <EntitySet Name="cse_summary_sixmonths_test" EntityType="Self.cse_summary_sixmonths_test" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="new_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cse_summary_sixmonths">
+          <Key>
+            <PropertyRef Name="response_id" />
+          </Key>
+          <Property Name="response_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_first" Type="DateTime" Precision="3" />
+          <Property Name="date_last" Type="DateTime" Precision="3" />
+          <Property Name="show_date" Type="DateTime" Precision="3" />
+          <Property Name="rock_star_winners" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="super_stars_winner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="super_stars_winner_ave" Type="Double" />
+          <Property Name="super_stars_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="super_stars_runnerup_ave" Type="Double" />
+          <Property Name="supporting_cast_winner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="supporting_cast_winner_stars" Type="Double" />
+          <Property Name="supporting_cast_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="supporting_cast_runnerup_stars" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="new_DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cse_summary_sixmonths" EntityType="Self.cse_summary_sixmonths" />
+          <EntitySet Name="cse_summary_sixmonths_test" EntityType="new_DbModel.cse_summary_sixmonths_test" />
+        </EntityContainer>
+        <EntityType Name="cse_summary_sixmonths_test">
+          <Key>
+            <PropertyRef Name="response_id" />
+          </Key>
+          <Property Name="response_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_first" Type="DateTime" Precision="3" />
+          <Property Name="date_last" Type="DateTime" Precision="3" />
+          <Property Name="show_date" Type="DateTime" Precision="3" />
+          <Property Name="rock_star_winners" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="super_stars_winner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="super_stars_winner_ave" Type="Double" />
+          <Property Name="super_stars_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="super_stars_runnerup_ave" Type="Double" />
+          <Property Name="blazing_stars_winner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="blazing_stars_winner_ave" Type="Double" />
+          <Property Name="blazing_stars_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="blazing_stars_runnerup_ave" Type="Double" />
+          <Property Name="supporting_stars_winner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="supporting_stars_winner_stars" Type="Double" />
+          <Property Name="supporting_stars_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="supporting_stars_runnerup_stars" Type="Double" />
+          <Property Name="leading_stars_winners" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="leading_stars_winners_stars" Type="Double" />
+          <Property Name="leading_stars_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="leading_stars_runnerup_stars" Type="Double" />
+          <Property Name="supporting_cast_winner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="supporting_cast_winner_stars" Type="Double" />
+          <Property Name="supporting_cast_runnerup" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="supporting_cast_runnerup_stars" Type="Double" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="new_DbModelStoreContainer" CdmEntityContainer="new_DbEntities">
+        <EntitySetMapping Name="cse_summary_sixmonths_test">
+            <EntityTypeMapping TypeName="new_DbModel.cse_summary_sixmonths_test">
+              <MappingFragment StoreEntitySet="cse_summary_sixmonths_test">
+                <ScalarProperty Name="supporting_cast_runnerup_stars" ColumnName="supporting_cast_runnerup_stars" />
+                <ScalarProperty Name="supporting_cast_runnerup" ColumnName="supporting_cast_runnerup" />
+                <ScalarProperty Name="supporting_cast_winner_stars" ColumnName="supporting_cast_winner_stars" />
+                <ScalarProperty Name="supporting_cast_winner" ColumnName="supporting_cast_winner" />
+                <ScalarProperty Name="leading_stars_runnerup_stars" ColumnName="leading_stars_runnerup_stars" />
+                <ScalarProperty Name="leading_stars_runnerup" ColumnName="leading_stars_runnerup" />
+                <ScalarProperty Name="leading_stars_winners_stars" ColumnName="leading_stars_winners_stars" />
+                <ScalarProperty Name="leading_stars_winners" ColumnName="leading_stars_winners" />
+                <ScalarProperty Name="supporting_stars_runnerup_stars" ColumnName="supporting_stars_runnerup_stars" />
+                <ScalarProperty Name="supporting_stars_runnerup" ColumnName="supporting_stars_runnerup" />
+                <ScalarProperty Name="supporting_stars_winner_stars" ColumnName="supporting_stars_winner_stars" />
+                <ScalarProperty Name="supporting_stars_winner" ColumnName="supporting_stars_winner" />
+                <ScalarProperty Name="blazing_stars_runnerup_ave" ColumnName="blazing_stars_runnerup_ave" />
+                <ScalarProperty Name="blazing_stars_runnerup" ColumnName="blazing_stars_runnerup" />
+                <ScalarProperty Name="blazing_stars_winner_ave" ColumnName="blazing_stars_winner_ave" />
+                <ScalarProperty Name="blazing_stars_winner" ColumnName="blazing_stars_winner" />
+                <ScalarProperty Name="super_stars_runnerup_ave" ColumnName="super_stars_runnerup_ave" />
+                <ScalarProperty Name="super_stars_runnerup" ColumnName="super_stars_runnerup" />
+                <ScalarProperty Name="super_stars_winner_ave" ColumnName="super_stars_winner_ave" />
+                <ScalarProperty Name="super_stars_winner" ColumnName="super_stars_winner" />
+                <ScalarProperty Name="rock_star_winners" ColumnName="rock_star_winners" />
+                <ScalarProperty Name="show_date" ColumnName="show_date" />
+                <ScalarProperty Name="date_last" ColumnName="date_last" />
+                <ScalarProperty Name="date_first" ColumnName="date_first" />
+                <ScalarProperty Name="response_id" ColumnName="response_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
